@@ -6,7 +6,7 @@ import { template } from '@angular/core/src/render3';
     template:`
     <div>
     <h1>Upcoming anuglar stuff</h1>   
-  <event-thumbnail [event]="event1"></event-thumbnail>
+  <event-thumbnail (eventClick)="handleEventClicked($event)" [event]="event1"></event-thumbnail>
     </div>
     `
    
@@ -24,5 +24,8 @@ event1={
         city:'London',
         country:'England'
     }
+}
+handleEventClicked(data){
+    console.log('received:',data)
 }
 }

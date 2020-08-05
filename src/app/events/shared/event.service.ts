@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core'
+import { EventsAppComponent } from 'src/app/events-app.component'
 
 @Injectable()
 export class EventService{
     getEvents():any{
 return EVENTS
+    }
+    getEvent(id:number){
+      return EVENTS.find(event=>event.id===id)
     }
 }
 const  EVENTS = [
